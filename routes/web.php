@@ -1,11 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BookController;
+use App\Http\Controllers\AuthorController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+
+
+
+
+
 
 //Rutas de Book
 Route::get("/books",[BookController::class, "index"])->name("books.index");
