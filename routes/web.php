@@ -13,9 +13,7 @@ Route::get('/', function () {
 
 
 
-
-
-
+//Ramas de Author
 Route::get("/authors",[AuthorController::class, "index"])->name("authors.index");
 Route::post("/authors",[AuthorController::class, "store"])->name("authors.store");
 Route::get("/authors/{id}",[AuthorController::class, "edit"])->name("authors.edit");
