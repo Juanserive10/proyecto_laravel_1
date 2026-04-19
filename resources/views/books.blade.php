@@ -20,6 +20,9 @@
 
         </form>
         <h1>Listado de Libros</h1>
+        @if (@session("error"))
+            {{session("error")}}
+        @endif
         <table class = "table">
             <thead>
                 <tr>

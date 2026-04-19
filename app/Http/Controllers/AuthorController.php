@@ -64,6 +64,7 @@ class AuthorController extends Controller
      */
     public function destroy($id){
         $author = Author::find($id);
+        $author->authorBooks()->delete();
         $author->delete();
         return redirect()->route("authors.index");
     }

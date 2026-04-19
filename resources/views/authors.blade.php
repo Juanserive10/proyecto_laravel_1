@@ -17,7 +17,7 @@
             <button type="submit">Guardar Autor</button>
 
         </form>
-        <h1>Listado de Libros</h1>
+        <h1>Listado de Autores</h1>
         <table class = "table">
             <thead>
                 <tr>

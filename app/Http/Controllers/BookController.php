@@ -66,6 +66,9 @@ class BookController extends Controller
      */
     public function destroy($id){
         $book = Book::find($id);
+        if($book->authorBooks()->exists()){
+            return redirect()->route("books.index")->with("error", "No se puede eliminar el Libro porque tiene registros asociados en otras tablas");
+        }
         $book->delete();
         return redirect()->route("books.index");
     }
