@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
+use App\Http\Controllers\AuthorBookController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,3 +22,10 @@ Route::post("/authors",[AuthorController::class, "store"])->name("authors.store"
 Route::get("/authors/{id}",[AuthorController::class, "edit"])->name("authors.edit");
 Route::delete("/authors/{id}",[AuthorController::class, "destroy"])->name("authors.destroy");
 Route::put("/authors/{id}",[AuthorController::class, "update"])->name("authors.update");
+
+//Rutas de author_books
+Route::get("/author_books",[AuthorBookController::class, "index"])->name("author_books.index");
+Route::post("/author_books",[AuthorBookController::class, "store"])->name("author_books.store");
+Route::get("/author_books/{id}",[AuthorBookController::class, "edit"])->name("author_books.edit");
+Route::delete("/author_books/{id}",[AuthorBookController::class, "destroy"])->name("author_books.destroy");
+Route::put("/author_books/{id}",[AuthorBookController::class, "update"])->name("author_books.update");
