@@ -30,4 +30,5 @@ Route::get("/author_books/{id}",[AuthorBookController::class, "edit"])->name("au
 Route::delete("/author_books/{id}",[AuthorBookController::class, "destroy"])->name("author_books.destroy");
 Route::put("/author_books/{id}",[AuthorBookController::class, "update"])->name("author_books.update");
 
-Route::get("/prueba",[AuthorController::class, "prueba"])->name("author_books.index")->middleware("example");
+Route::get("/prueba",[AuthorController::class, "prueba"])->name("author_prueba.index")->middleware("example");
+Route::get("/prueba2",[BookController::class, "prueba2"])->name("book_prueba2.index");

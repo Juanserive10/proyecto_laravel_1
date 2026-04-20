@@ -72,4 +72,14 @@ class BookController extends Controller
         $book->delete();
         return redirect()->route("books.index");
     }
+
+    public function prueba2(){
+        $cantidad_books = Book:: count();
+        $books_precio = Book::where("price", 140000)->get();
+        $libros = Book::orderBy("price", "asc")->get();
+        $libros_take = Book::take(2)->get();
+        $libros_precio_menor = Book::min("price");
+        $libros_precio_mayor = Book::max("price");
+        return $libros_precio_mayor;
+    }
 }
