@@ -68,4 +68,9 @@ class AuthorController extends Controller
         $author->delete();
         return redirect()->route("authors.index");
     }
+
+    public function prueba(){
+        $authors = Author::orderBy("name", "asc")->get();
+        return view("nuevaVista", compact("authors"));
+    }
 }
