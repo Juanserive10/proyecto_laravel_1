@@ -32,3 +32,7 @@ Route::put("/author_books/{id}",[AuthorBookController::class, "update"])->name("
 
 Route::get("/prueba",[AuthorController::class, "prueba"])->name("author_prueba.index")->middleware("example");
 Route::get("/prueba2",[BookController::class, "prueba2"])->name("book_prueba2.index");
+
+Route::get('/grafica', function () {
+    return view('grafica');
+});
