@@ -17,7 +17,7 @@ Route::delete("/books/{id}",[BookController::class, "destroy"])->name("books.des
 Route::put("/books/{id}",[BookController::class, "update"])->name("books.update");
 
 //Rutas de Author
-Route::get("/authors",[AuthorController::class, "index"])->name("authors.index");
+Route::get("/authors",[AuthorController::class, "index"])->name("authors.index")->middleware("auth","role:Estudiante");
 Route::post("/authors",[AuthorController::class, "store"])->name("authors.store");
 Route::get("/authors/{id}",[AuthorController::class, "edit"])->name("authors.edit");
 Route::delete("/authors/{id}",[AuthorController::class, "destroy"])->name("authors.destroy");
@@ -36,3 +36,6 @@ Route::get("/prueba2",[BookController::class, "prueba2"])->name("book_prueba2.in
 Route::get('/grafica', function () {
     return view('grafica');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
